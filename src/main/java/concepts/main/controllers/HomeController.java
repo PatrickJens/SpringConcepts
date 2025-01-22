@@ -10,11 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
     private Coach mCoach;
+    private Coach nCoach;
 
     //Constructor Injection
     @Autowired
-    public HomeController( @Qualifier("cricketCoach") Coach injectedCoach){
-        mCoach = injectedCoach;
+    public HomeController( @Qualifier("cricketCoach") Coach cCoach1,@Qualifier("cricketCoach") Coach cCoach2){
+        mCoach = cCoach1;
+        nCoach = cCoach2;
+    }
+
+    @GetMapping("/checkPrototype")
+    public String check(){
+        return "Comparing beans: mCoach == nCoach, " + (mCoach == nCoach);
     }
 
     @Value("${home.welcome}")
