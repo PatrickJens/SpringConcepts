@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach{
     @Override
     public String workout(){
-        return "Practice your backhand volley.";
+        System.out.println("In constructor:  " + getClass().getSimpleName() );
+        return "Tennis coach says practice your backhand volley.";
     }
 }
