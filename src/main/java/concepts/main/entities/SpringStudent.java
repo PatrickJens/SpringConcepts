@@ -2,11 +2,9 @@ package concepts.main.entities;
 
 import jakarta.persistence.*;
 
-import javax.annotation.processing.Generated;
-
 @Entity
 @Table(name="spring_student")
-public class Spring_Student {
+public class SpringStudent {
 
     //Attributes
     @Id
@@ -24,7 +22,7 @@ public class Spring_Student {
     private String email;
 
     //Constructor
-    public Spring_Student(String firstName, String lastName, String email){
+    public SpringStudent(String firstName, String lastName, String email){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
